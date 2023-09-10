@@ -1,17 +1,12 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-var cors = require('cors');
+
 //aucune liaison avec bootrstrap (css framework)
 //connexion au serveur
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-  const corsOptions = {
-    origin: 'http://localhost:3000',
-    credentials: true,
-    optionSuccessStatus: 200,
-  };
-  app.use(cors(corsOptions));
+
   const config = new DocumentBuilder()
     .setTitle('E-Learning Platform')
     .setDescription('Formation NestJs')
