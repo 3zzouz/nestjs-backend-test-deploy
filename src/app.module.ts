@@ -20,9 +20,15 @@ import { ChatGateway } from './chat.gateway';
 //ici connexion a la database
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://127.0.0.1:27017', {
-      dbName: 'formationnest',
-    }),
+    // MongooseModule.forRoot(
+    // 'mongodb+srv://qadg199:<pgkZJVfjnJXjdKRt>@cluster0.9zn9sy8.mongodb.net/?retryWrites=true&w=majority',
+    // {
+    //   dbName: 'formationnest',
+    //  },
+    //  ),
+    MongooseModule.forRoot(
+      'mongodb+srv://qadg199:pgkZJVfjnJXjdKRt@cluster0.9zn9sy8.mongodb.net/testnestjs?retryWrites=true&w=majority',
+    ),
     UsersModule,
     CategoriesModule,
     CoursesModule,
@@ -56,6 +62,6 @@ import { ChatGateway } from './chat.gateway';
     AuthModule,
   ],
   controllers: [AppController],
-  providers: [AppService,ChatGateway],
+  providers: [AppService, ChatGateway],
 })
 export class AppModule {}
